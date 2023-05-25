@@ -7,4 +7,4 @@ Document for writing about the project for AzMogaTukISega
     - singleplayer and multiplayer (using alpha beta prooning)
     - create a simple database in firebase so we can store the best player scores and have a page for them
     - learn how to make it more interactive while using the old dom manipulation
-3. .....
+3.  Having a page to explain the user how to play the game 
