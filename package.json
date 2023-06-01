@@ -18,6 +18,7 @@
   "homepage": "https://github.com/VladimirKotsev/Az-Moga-Tuk-I-Sega#readme",
   "dependencies": {
     "firebase": "^9.22.1",
-    "lit-html": "^2.7.4"
+    "lit-html": "^2.7.4",
+    "page": "^1.11.6"
   }
 }
