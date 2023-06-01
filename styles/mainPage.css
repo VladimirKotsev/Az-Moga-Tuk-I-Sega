@@ -10,18 +10,10 @@ body{
     text-shadow: 0 0 40px #7716c0, 0 0 20px #7716c0;   
 }
 .buttons{
-    position:relative;
-    left: 15vw;
+    text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-  
-}
-footer{
-    margin-top: 70px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
     gap: 10px;
 }
 .groupButtons{
@@ -35,10 +27,16 @@ a{
     color: #ae00ff"
     
 }
-
  a:hover {
     color:#7716c0;
  }
- .container.active{
+ .blur{
     filter: blur(20%)
+ }
+ .popUpHidden{
+    display: none;
+ }
+ .popUpActive{
+    display: none;
+    filter: blur(20%);
  }

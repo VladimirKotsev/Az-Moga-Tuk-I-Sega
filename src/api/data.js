@@ -6,3 +6,4 @@ import {scores} from './firebase.js';
 
 //Methods for posting the scores in the database
 
+

@@ -1,6 +1,6 @@
 import { html } from '../library.js';
 
-let gameView = () => html`
+const gameView = () => html`
 <h1>game</h1>
 `;
 
