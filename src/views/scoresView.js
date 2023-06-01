@@ -1,11 +1,10 @@
-import { html, page } from '../library.js'
-import { renderTemplate } from '../app.js';
+import { html } from '../library.js';
 
 const scoreView = () => html`
-
+<h1>score</h1>
 `;
 
 
-export function showBestScores(){
-    renderTemplate(scoreView);
-}  
+export async function showScores(ctx) {
+    ctx.render(scoreView());
+}

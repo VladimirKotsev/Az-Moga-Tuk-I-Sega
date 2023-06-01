@@ -1,54 +1,54 @@
-import { html, page } from '../library.js'
-import { renderTemplate } from '../app.js';
+import { html} from '../library.js';
 
-const homeView = html`
-    <body class="backcolor">
-        <div>
-            <p class="title">Queens</p>
-        </div>
-        <div class="buttons">
-            <span>
-                <button class="gamebutton">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Start Game
-                </button>
-            </span>
-            <span>
-                <button class="gamebutton">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Best score
-                </button>
-            </span>
-            <span>
-                <button class="gamebutton">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Help
-                </button>
-            </span>
-        </div>
-    </body>
-    <footer>   
-        <div class="socials">
-            <img src="/pictures/instagram.png" alt="" width="20" height="20">
-        </div>
-        <div class="socials">
-            <img src="/pictures/gmail.png" alt="" width="20" height="20">
-        </div>
-        <div class="socials">
-            <img src="/pictures/github.png" alt="" width="20" height="20">
-        </div>   
-    </footer>
+let homeView = () => html`
+<section>
+<div>
+<p class="title">Queens</p>
+</div>
+<div class="buttons">
+<a href="/game">
+    <button class="gamebutton"> <!-- to do id's and event listeners-->
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Start Game
+      </button>
+</a>
+<a href="/scores">
+    <button class="gamebutton"    onClick="window.location.href='/scores'">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Best score
+    </button>
+</a>
+<a href="/help">
+    <button class="gamebutton"    onClick="window.location.href='/help'">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Help
+    </button>
+</a>
+
+<div class="group">
+    <div class="socials">
+        <img src="/pictures/instagram.png" alt="" width="20" height="20">
+    </div>
+    <div class="socials">
+        <img src="/pictures/gmail.png" alt="" width="20" height="20">
+    </div>
+    <div class="socials">
+        <img src="/pictures/github.png" alt="" width="20" height="20">
+    </div>
+</div>
+</div>
+</section>
 `;
 
-export function showHome(){
-    renderTemplate(homeView);
-}  
+export async function showHome(ctx) {
+    ctx.render(homeView());
+}

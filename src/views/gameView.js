@@ -1,11 +1,10 @@
-import { html, page } from '../library.js'
-import { renderTemplate } from '../app.js';
+import { html } from '../library.js';
 
-const gameView = html`
-
+let gameView = () => html`
+<h1>game</h1>
 `;
 
 
-export function showGame(){
-    renderTemplate(gameView);
-} 
+export async function showGame(ctx) {
+    ctx.render(gameView());
+}
