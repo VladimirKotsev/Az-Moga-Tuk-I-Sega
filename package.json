@@ -1,0 +1,23 @@
+{
+  "name": "az-moga-tuk-i-sega",
+  "version": "1.0.0",
+  "description": "Document for writing about the project for AzMogaTukISega",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladimirKotsev/Az-Moga-Tuk-I-Sega.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladimirKotsev/Az-Moga-Tuk-I-Sega/issues"
+  },
+  "homepage": "https://github.com/VladimirKotsev/Az-Moga-Tuk-I-Sega#readme",
+  "dependencies": {
+    "firebase": "^9.22.1",
+    "lit-html": "^2.7.4"
+  }
+}
