@@ -1,0 +1,13 @@
+.backcolor{
+    background-color: #212121;
+}
+.title{
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    text-shadow: 0 0 50px #7716c0, 0 0 20px #0000FF;   
+}
+.buttons{
+
+    text-align: center;
+}
