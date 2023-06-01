@@ -1,0 +1,63 @@
+.socials {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(44, 44, 44);
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+    border: none;
+  }
+  
+  .bell {
+    width: 18px;
+  }
+  
+  .bell path {
+    fill: white;
+  }
+  
+  .socials:hover {
+    background-color: rgb(56, 56, 56);
+  }
+  
+  .socials:hover .bell {
+    animation: bellRing 0.9s both;
+  }
+  
+  /* bell ringing animation keyframes*/
+  @keyframes bellRing {
+    0%,
+    100% {
+      transform-origin: top;
+    }
+  
+    15% {
+      transform: rotateZ(10deg);
+    }
+  
+    30% {
+      transform: rotateZ(-10deg);
+    }
+  
+    45% {
+      transform: rotateZ(5deg);
+    }
+  
+    60% {
+      transform: rotateZ(-5deg);
+    }
+  
+    75% {
+      transform: rotateZ(2deg);
+    }
+  }
+  
+  .socials:active {
+    transform: scale(0.8);
+  }
+  

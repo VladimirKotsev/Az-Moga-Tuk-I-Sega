@@ -1,13 +1,17 @@
 .backcolor{
-    background-color: #212121;
+    background-color: rgb(28, 28, 28);
 }
 .title{
     text-align: center;
     color: white;
     font-size: 60px;
-    text-shadow: 0 0 50px #7716c0, 0 0 20px #0000FF;   
+    text-shadow: 0 0 40px #7716c0, 0 0 20px #7716c0;   
 }
 .buttons{
-
     text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
 }
