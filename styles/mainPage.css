@@ -37,3 +37,6 @@ a{
  a:hover {
     color:#7716c0;
  }
+ .container.active{
+    filter: blur(20%)
+ }
