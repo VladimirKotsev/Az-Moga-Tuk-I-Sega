@@ -9,15 +9,7 @@ Document for writing about the project for AzMogaTukISega
     - learn how to make it more interactive while using the old dom manipulation
 3.  Having a page to explain the user how to play the game 
 4.  Make different settings for the game
-<<<<<<< HEAD
     - player can change their figure 
     - changing the theme (light and dark)
 5.  Make marketing 
     - make instagram page and add links to it in the home page   
-=======
-    -player can change their figure 
-    -changing the theme (light and dark)
-    -
-5. Make marketing 
-    -make instagram page and add links to it in the home page   
->>>>>>> defb8960a1f401b2334378c2334d0b18dbac838d
