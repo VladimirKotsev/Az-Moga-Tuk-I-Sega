@@ -19,6 +19,7 @@
   "dependencies": {
     "firebase": "^9.22.1",
     "lit-html": "^2.7.4",
-    "page": "^1.11.6"
+    "page": "^1.11.6",
+    "page.js": "^4.13.3"
   }
 }
