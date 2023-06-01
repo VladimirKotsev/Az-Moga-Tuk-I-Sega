@@ -1,10 +1,10 @@
-import { html, page } from '../library.js';
-import { renderTemplate } from '../app.js';
+import { html } from '../library.js';
 
-const aboutView = html`
-
+let helpView = () => html`
+<section>
+<h1>Help</h1>
+</section>
 `;
-
-export function showAbout(){
-    renderTemplate(aboutView);
-}  
+export async function showHelp(ctx) {
+    ctx.render(helpView());
+}

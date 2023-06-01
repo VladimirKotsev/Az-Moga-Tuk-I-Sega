@@ -1,9 +1,8 @@
 import { html, page } from '../library.js'
 import { renderTemplate } from '../app.js';
-import { showGame } from './gameView.js';
 
-const homeView = html`
-<div id="container" class="container">
+let homeView = () => html`
+<section>
 <p class="title">Queens</p>
 </div>
 <div class="buttons">
@@ -14,8 +13,8 @@ const homeView = html`
         <span></span>
         <span></span>
         Start Game
-      </button>
-    </a>
+    </button>
+</a>
 <a href="/scores">
     <button class="gamebutton" id="scores">
       <span></span>
@@ -58,8 +57,20 @@ const homeView = html`
 </a>
 </div>
 </div>
+    <div class="socials">
+        <img src="/pictures/instagram.png" alt="" width="20" height="20">
+    </div>
+    <div class="socials">
+        <img src="/pictures/gmail.png" alt="" width="20" height="20">
+    </div>
+    <div class="socials">
+        <img src="/pictures/github.png" alt="" width="20" height="20">
+    </div>
+</div>
+</div>
+</section>
 `;
 
-export function showHome(){
-    renderTemplate(homeView);
-}  
+export async function showHome(ctx) {
+    ctx.render(homeView());
+}
