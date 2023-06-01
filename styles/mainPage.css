@@ -26,3 +26,14 @@ footer{
     align-items: center;
     text-align: center;
 }
+
+a{
+    text-decoration-style: none; 
+    text-decoration: none; 
+    color: #ae00ff"
+    
+}
+
+ a:hover {
+    color:#7716c0;
+ }

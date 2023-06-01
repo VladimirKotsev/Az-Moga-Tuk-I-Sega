@@ -14,3 +14,4 @@ page.start();
 export function renderTemplate(content){
     render(content, document.querySelector(`main`));
 }
+
