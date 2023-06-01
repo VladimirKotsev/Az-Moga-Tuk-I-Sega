@@ -1,4 +1,4 @@
-import {app} from './firebase.js';
+import {scores} from './firebase.js';
 
 //Methods for getting the best scores from the firebase realtime database
 
@@ -6,4 +6,9 @@ import {app} from './firebase.js';
 
 //Methods for posting the scores in the database
 
+getData()
+{
+    console.log(scores);
+
+}
 

@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+const firebase = require("firebase");
 
 const firebaseConfig = {
   apiKey: "AIzaSyC8ihU8oXvFx85Yt8eoM9ZYEiWlXoa2juQ",
@@ -11,6 +11,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
 
-export {app};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const scores = db.collection("Scores");
+
+export { scores };
