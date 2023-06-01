@@ -1,5 +1,3 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-
 const firebaseConfig = {
   apiKey: "AIzaSyC8ihU8oXvFx85Yt8eoM9ZYEiWlXoa2juQ",
   authDomain: "az-moga-tuk-i-sega-e929e.firebaseapp.com",
@@ -12,8 +10,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+var ref = database.ref("Scores");
 //functions to read and write data into the database
+
+
+getTopScores();
 
 export async function getTopScores() {
 
