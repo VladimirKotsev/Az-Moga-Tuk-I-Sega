@@ -15,3 +15,14 @@
     gap: 10px;
   
 }
+footer{
+    margin-top: 70px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.groupButtons{
+    align-items: center;
+    text-align: center;
+}
