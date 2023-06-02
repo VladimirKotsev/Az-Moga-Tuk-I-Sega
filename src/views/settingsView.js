@@ -24,36 +24,45 @@ let settingsView = () => html`<div class="container">
 
 
 export async function showSettings(ctx) {
-  ctx.render(settingsView(muteMusic));
+    ctx.render(settingsView(muteMusic));
 
 
-  let musicCheckbox = document.getElementById("musicCheckbox");
-  musicCheckbox.addEventListener('change',muteMusic);
+    let musicCheckbox = document.getElementById("musicCheckbox");
+    musicCheckbox.addEventListener('change', muteMusic);
 
-  function muteMusic(){
 
-    if(musicCheckbox.checked==true){
-        ctx.audio.pause();
+    let volumeSlider = document.getElementById("volumeSlider");
+    volumeSlider.addEventListener("input", volumeChange);
+
+    function muteMusic() {
+
+        if (musicCheckbox.checked == true) {
+            ctx.audio.pause();
+        }
+        else {
+            ctx.audio.play();
+        }
+
     }
-    else{
-        ctx.audio.play();
+
+    function volumeChange() {
+        let sliderValue = volumeSlider.value;
+        ctx.audio.volume=sliderValue/100;
+    }
+}
+
+function themeSelection(ctx) {
+
+    if (ctx.backgroundColor == 'blackTheme') {
+
+        ctx.backgroundColor = 'whiteTheme';
+    }
+    else {
+
+        ctx.backgroundColor = 'blackTheme';
     }
 
-}
-}
 
-function themeSelection(ctx){
-
-  if(ctx.backgroundColor == 'blackTheme'){
-
-    ctx.backgroundColor = 'whiteTheme';
-  }
-  else{
-    
-    ctx.backgroundColor = 'blackTheme';
-  }
-
-  
 }
 
 
