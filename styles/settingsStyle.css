@@ -1,0 +1,42 @@
+body{
+  text-align: center;
+}
+form{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 50vw;
+  height: 2vh;
+  background-color: none;
+  outline: none;
+}
+
+/* Track styles */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #ae00ff; /* Default track color */
+  height: 10px;
+  border-radius: 10px;
+}
+
+/* Thumb styles */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #7716c0; /* Change to black */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#toggleCheckbox:checked + .toggle-slider::after {
+  transform: translateX(20px);
+}
+
+#toggleDiv {
+  display: none;
+}

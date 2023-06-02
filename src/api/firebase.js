@@ -48,6 +48,8 @@ export async function checkForNewBestScore(score) {
 export async function setNewBestRecord(name, score) {
 
   //logic for removing the worst score
+
+  //choose from which category you have to get the best score
   let scores = await getTopScores();
   const scoresArray = [...Object.entries(scores)];
 
@@ -63,7 +65,10 @@ export async function setNewBestRecord(name, score) {
       count++;
   }
 
-  database.ref(`/gameScores/${scoresArray[indexOfMinScore][0]}`).remove();
+  database.ref(`/Scores//${scoresArray[indexOfMinScore][0]}`).remove();
+
+
+  //setting the new best score by category
 
   var data = {
       name,

@@ -11,5 +11,5 @@ Document for writing about the project for AzMogaTukISega
 4.  Make different settings for the game
     - player can change their figure 
     - changing the theme (light and dark)
-5.  Make marketing 
-    - make instagram page and add links to it in the home page   
+5.  Make marketing
+    - make instagram page and add links to it in the home page  

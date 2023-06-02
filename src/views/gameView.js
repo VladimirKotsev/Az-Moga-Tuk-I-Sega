@@ -7,4 +7,8 @@ const gameView = () => html`
 
 export async function showGame(ctx) {
     ctx.render(gameView());
+    
 }
+
+
+

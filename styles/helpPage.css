@@ -1,0 +1,12 @@
+.heading{
+ text-align: center;
+}
+.sectionClass{
+    text-align: center;
+}
+
+.helpPageReturnButton{
+    position: fixed;
+    top: 0px; 
+    left: 10px; 
+}

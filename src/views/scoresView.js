@@ -14,14 +14,6 @@ export async function showScores(ctx) {
     let singlePlayerScores= scoresData.SinglePlayer;
     let mulplayerScores= scoresData.Multiplayer;
 
-    // let orderedArray = [];
-    // for (const current of scoresArray) {
-    //     orderedArray.push([current[1].name, current[1].score]);
-    // }
-
-    // orderedArray = orderedArray.sort(function (a, b) {
-    //     return b[1] - a[1];
-    // });
-
+    
     await ctx.render(scoreTemplate(singlePlayerScores));
 }
