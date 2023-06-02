@@ -1,6 +1,6 @@
-.gamebutton {
-    height: 55px;
-    width: 200px;
+.gameButton {
+    height: 8vh;
+    width: 20vw;
     position: relative;
     padding: 1em 1.8em;
     outline: none;
@@ -18,16 +18,16 @@
     margin-top: 17px;
    }
    
-   .gamebutton:hover {
+   .gameButton:hover {
     box-shadow: 0 0 5px #ae00ff, 0 0 5px #001eff, 0 0 25px #ae00ff;
     transition-delay: 0.3s;
    }
    
-   .gamebutton span {
+   .gameButton span {
     position: absolute;
    }
    
-   .gamebutton span:nth-child(1) {
+   .gameButton span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -35,12 +35,12 @@
     background: linear-gradient(90deg, transparent, #ae00ff);
    }
    
-   .gamebutton:hover span:nth-child(1) {
+   .gameButton:hover span:nth-child(1) {
     left: 100%;
     transition: 0.7s;
    }
    
-   .gamebutton span:nth-child(3) {
+   .gameButton span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -48,13 +48,13 @@
     background: linear-gradient(90deg, transparent, #001eff);
    }
    
-   .gamebutton:hover span:nth-child(3) {
+   .gameButton:hover span:nth-child(3) {
     right: 100%;
     transition: 0.7s;
     transition-delay: 0.35s;
    }
    
-   .gamebutton span:nth-child(2) {
+   .gameButton span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -62,7 +62,7 @@
     background: linear-gradient(180deg, transparent, #ae00ff);
    }
    
-   .gamebutton:hover span:nth-child(2) {
+   .gameButton:hover span:nth-child(2) {
     top: 100%;
     transition: 0.7s;
     transition-delay: 0.17s;

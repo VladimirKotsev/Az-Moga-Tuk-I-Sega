@@ -10,7 +10,9 @@ export async function showScores(ctx) {
     //getting the data from the database for the best scores and visualizing the best 10 scores
 
     let scoresData = await getTopScores();
-    const scoresArray = [...Object.entries(scoresData)];
+
+    let singlePlayerScores= scoresData.SinglePlayer;
+    let mulplayerScores= scoresData.Multiplayer;
 
     // let orderedArray = [];
     // for (const current of scoresArray) {
@@ -21,5 +23,5 @@ export async function showScores(ctx) {
     //     return b[1] - a[1];
     // });
 
-    await ctx.render(scoreTemplate(scoresArray));
+    await ctx.render(scoreTemplate(singlePlayerScores));
 }
