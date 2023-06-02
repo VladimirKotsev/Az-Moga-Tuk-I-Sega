@@ -5,7 +5,7 @@ const homeView = () => html`
     <p class="title">Queens</p>
     <div class="buttons">
     <a href="/game">
-        <button class="gamebutton" id="game">
+        <button class="gameButton" id="game">
             <span></span>
             <span></span>
             <span></span>
@@ -14,7 +14,7 @@ const homeView = () => html`
         </button>
     </a>
     <a href="/scores">
-        <button class="gamebutton" id="scores">
+        <button class="gameButton" id="scores">
         <span></span>
         <span></span>
         <span></span>
@@ -23,7 +23,7 @@ const homeView = () => html`
         </button>
     </a>
     <a href="/help">
-        <button class="gamebutton" id="help">
+        <button class="gameButton" id="help">
             <span></span>
             <span></span>
             <span></span>
@@ -32,7 +32,7 @@ const homeView = () => html`
         </button>
     </a>
     <a href="" onclick="${toggle}">
-        <button class="gamebutton" id="settings">
+        <button class="gameButton" id="settings">
         <span></span>
         <span></span>
         <span></span>

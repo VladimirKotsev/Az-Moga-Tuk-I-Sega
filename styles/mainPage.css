@@ -1,42 +1,83 @@
-body{
+body {
     background-color: rgb(28, 28, 28);
+    overflow: hidden;
 }
 
 
-.title{
+.title {
     text-align: center;
     color: white;
-    font-size: 60px;
-    text-shadow: 0 0 40px #7716c0, 0 0 20px #7716c0;   
+    font-size: 4vw;
+    text-shadow: 0 0 40px #7716c0, 0 0 20px #7716c0;
 }
-.buttons{
+
+.buttons {
     text-align: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2vh;
 }
-.groupButtons{
+
+.groupButtons {
     align-items: center;
     text-align: center;
 }
 
-a{
-    text-decoration-style: none; 
-    text-decoration: none; 
-    color: #ae00ff"
-    
+a {
+    text-decoration-style: none;
+    text-decoration: none;
+    color: #ae00ff;
 }
- a:hover {
-    color:#7716c0;
- }
- .blur{
+
+a:hover {
+    color: #7716c0;
+}
+
+.blur {
     filter: blur(20%)
- }
- .popUpHidden{
+}
+
+.popUpHidden {
     display: none;
- }
- .popUpActive{
+}
+
+.popUpActive {
     display: none;
     filter: blur(20%);
- }
+}
+
+
+.gameDescriptionTextContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5vw;
+    color: #ae00ff;
+    border-color: #7716c0;
+}
+
+.gameDescriptionTextContainer p {
+    font-size: 2.1vw;
+    padding: 2vw;
+    color: #ae00ff;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #7716c0;
+    border-width: 3px;
+}
+
+.gameDescriptionTextContainer img {
+    width: 100vw;
+    margin: 10vw;
+}
+
+.helpPageReturnButton{
+    margin-top: 100px;
+}
+
+.helpPageHeadingContainer{
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+}
