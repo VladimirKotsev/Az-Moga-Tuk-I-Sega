@@ -26,9 +26,9 @@ input[type="range"]::-webkit-slider-runnable-track {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
-  background-color: #7716c0; /* Change to black */
+  width: 10px;
+  height: 10px;
+  background-color: white; /* Change to black */
   border-radius: 50%;
   cursor: pointer;
 }

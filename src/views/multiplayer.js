@@ -1,10 +1,9 @@
-import { html } from '../library.js';
-
+import { html,page } from '../library.js';
 
 let multiplayerView = (gameData, matrixElement) => html`
 <section class="gameSection">
     <div class="scoreContainer">
-        <h3 class="title">${gameData.playerOneName} Score:${gameData.playerOneScore} ${gameData.playerTwoName} Score:${gameData.playerTwoScore}</h3>
+        <h3 class="title">${gameData.playerOneName} | ${gameData.playerTwoName} </h3>
     </div>
     ${matrixElement}
 </section>
@@ -14,6 +13,8 @@ let multiplayerView = (gameData, matrixElement) => html`
 export async function showMultiPlayerGame(ctx) {
 
     let gameData = JSON.parse(localStorage.getItem('gameData'));
+    gameData.playerOneScore = 0;
+    gameData.playerTwoScore = 0;
     let gameMatrix = [];
 
     //initialize matrix
@@ -26,7 +27,7 @@ export async function showMultiPlayerGame(ctx) {
     gameMatrix[0][0] = 0;
     gameMatrix[gameData.mDimension - 1][gameData.nDimension - 1] = 0;
     gameData.playerOneCoordinates = [0, 0];
-    gameData.playerTwoCoordinates = [gameData.mDimension-1, gameData.nDimension-1];
+    gameData.playerTwoCoordinates = [gameData.mDimension - 1, gameData.nDimension - 1];
 
 
 
@@ -39,55 +40,91 @@ export async function showMultiPlayerGame(ctx) {
             let td = document.createElement('td');
             td.id = `${m}${n}`;
             td.textContent = gameMatrix[m][n];
-            td.addEventListener('click', (e) => move(gameData,e));
+            td.addEventListener('click', (e) => move(gameData, e));
             tr.appendChild(td);
         }
-        
+
         matrixELement.appendChild(tr);
     }
- 
+
     await ctx.render(multiplayerView(gameData, matrixELement));
-       
+
     document.getElementById("00").classList.add("tdClickPlayerOne");
     document.getElementById(`${gameData.mDimension - 1}${gameData.nDimension - 1}`).classList.add("tdClickPlayerTwo");
 }
 
-function move(gameData,e) {
-    
+function move(gameData, e) {
+
     //find the player who is on turn
     let playerOnTurn = gameData.playerTurn;
 
-    let currentPlayerCoordinates = [0, 0];
+    let currentPlayerCoordinates = "00";
 
     if (playerOnTurn == "playerOne") {
-        currentPlayerCoordinates = gameData.playerOneCoordinates;
+        currentPlayerCoordinates = `${gameData.playerOneCoordinates[0]}${gameData.playerOneCoordinates[1]}`;
     }
     else {
-        currentPlayerCoordinates = gameData.playerTwoCoordinates;
+        currentPlayerCoordinates = `${gameData.playerTwoCoordinates[0]}${gameData.playerTwoCoordinates[1]}`;
     }
 
     //find possible moves
-//click only on them 
+    //if it is from the available fields make the move
+    //get the td which the user clicked
+
+    let clickedTdCoordinates = e.target.id;
+    let clickedTd = document.getElementById(clickedTdCoordinates);
+    let allAllowedFields = allowedFields(currentPlayerCoordinates[0], currentPlayerCoordinates[1], gameData);
 
 
+    if (allAllowedFields.includes(clickedTdCoordinates)) {
+
+        //check which class to set based on the player
+        if (playerOnTurn == 'playerOne') {
+
+            gameData.playerOneScore = scoreAfterOperation(gameData.playerOneScore, clickedTd.textContent);
+            clickedTd.classList.add('tdClickPlayerOne');
+            gameData.playerOneCoordinates = [clickedTdCoordinates[0], clickedTdCoordinates[1]];
+        }
+        else {
+            gameData.playerTwoScore = scoreAfterOperation(gameData.playerTwoScore, clickedTd.textContent);
+            clickedTd.classList.add('tdClickPlayerTwo');
+            gameData.playerTwoCoordinates = [clickedTdCoordinates[0], clickedTdCoordinates[1]];
+        }
+    }
+    else {
+        return;
+    }
+
+
+    let hasFieldsOne = allowedFields(gameData.playerOneCoordinates[0], gameData.playerOneCoordinates[1], gameData);
+    let hasFieldsTwo = allowedFields(gameData.playerTwoCoordinates[0], gameData.playerTwoCoordinates[1], gameData);
+    if(hasFieldsOne == 0 || hasFieldsTwo == 0){
+
+        console.log(playerOnTurn);
+
+        if(playerOnTurn="playerOne"){
+
+        localStorage.setItem('playerWinner', gameData.playerOneName);
+        }
+        else{
+            localStorage.setItem('playerWinner', gameData.playerTwoName);
+
+        }
+
+        if( gameData.playerOneScore >gameData.playerTwoScore){
+            localStorage.setItem('bestScore',gameData.playerOneScore);
+        }
+        else{
+            localStorage.setItem('bestScore',gameData.playerTwoScore);
+        }
+        
+
+
+        page.redirect('/winner');
+    }
 
     let td = document.getElementById(`${currentPlayerCoordinates[0]}${currentPlayerCoordinates[1]}`);
-    console.log(td);
     td.classList.add("tdClickPlayerOne");
-
-    
-
-    //find nearby and add them class
-
-    currentPlayerCoordinates
-
-
-
-    console.log(playerOnTurn);
-
-
-
-
 
     //changing the turn to the other player
     if (gameData.playerTurn == "playerOne") {
@@ -148,10 +185,82 @@ function getRandomOperation() {
     return result;
 }
 
-function allowedFields(m, n){
+function allowedFields(m, n, gameData) {
     let allowedIds = [];
-    if (m - 1 >= 0 && d){
-        allowedIds.push(`${m - 1}${n}`);
+
+    m = parseInt(m);
+    n = parseInt(n);
+
+    if (m - 1 >= 0) {
+
+        if (document.getElementById(`${m - 1}${n}`).classList.length == 0) {
+            allowedIds.push(`${m - 1}${n}`);
+        }
     }
-    
+    if (m - 1 >= 0 && n + 1 < gameData.nDimension) {
+
+        if (document.getElementById(`${m - 1}${n + 1}`).classList.length == 0) {
+            allowedIds.push(`${m - 1}${n + 1}`);
+        }
+    }
+    if (n + 1 < gameData.nDimension) {
+
+        if (document.getElementById(`${m}${n + 1}`).classList.length == 0) {
+            allowedIds.push(`${m}${n + 1}`);
+        }
+    }
+    if (m + 1 < gameData.mDimension && n + 1 < gameData.nDimension) {
+
+        if (document.getElementById(`${m + 1}${n + 1}`).classList.length == 0) {
+            allowedIds.push(`${m + 1}${n + 1}`);
+        }
+    }
+    if (m + 1 < gameData.mDimension) {
+
+        if (document.getElementById(`${m + 1}${n}`).classList.length == 0) {
+            allowedIds.push(`${m + 1}${n}`);
+        }
+    }
+    if (m + 1 < gameData.mDimension && n - 1 >= 0) {
+
+        if (document.getElementById(`${m + 1}${n - 1}`).classList.length == 0) {
+            allowedIds.push(`${m + 1}${n - 1}`);
+        }
+    }
+    if (n - 1 >= 0) {
+
+        if (document.getElementById(`${m}${n - 1}`).classList.length == 0) {
+            allowedIds.push(`${m}${n - 1}`);
+        }
+    }
+    if (m - 1 >= 0 && n - 1 >= 0) {
+
+        if (document.getElementById(`${m - 1}${n - 1}`).classList.length == 0) {
+            allowedIds.push(`${m - 1}${n - 1}`);
+        }
+    }
+
+    return allowedIds;
+
+}
+
+function scoreAfterOperation(currentScore, operation) {
+    let result = 0;
+
+    if (operation.length==1) {
+        result = currentScore + parseInt(operation);
+    }
+    else if(operation[0]=="-"){
+        result = currentScore + parseInt(operation);
+    }
+    else {
+        if (operation[0] == "/") {
+            result = Math.round(currentScore / parseInt(operation[1]));
+        }
+        else {
+            result = Math.round(currentScore * parseInt(operation[1]));
+        }
+    }
+
+    return result;
 }

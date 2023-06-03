@@ -2,7 +2,7 @@ import { html } from '../library.js';
 
 let settingsView = () => html`
 <div class="container">
-    <h1 class="title">Settings</h1>
+    <h3 class="title">Settings</h3>
     <h2>Background Music</h2>
     <label>
         <input type="checkbox" id="musicCheckbox">Mute background music
@@ -10,7 +10,6 @@ let settingsView = () => html`
 
     <h2>Volume</h2>
     <input type="range" id="volumeSlider" min="0" max="100" step="1" value="50">
-    </form>
 </div>
 `;
 

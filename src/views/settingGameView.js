@@ -1,32 +1,25 @@
 import { html, page } from '../library.js';
 
 const settingGameView = () => html`
-
-<h1 class="title">Welcome to the Game</h1>
-
+<section>
 <div class="main-container">
-  <p class="chooseMode">Chose mode:</p>
-  <form id="settingGameForm">
-    <div class="radioButtons">
-      <input type="radio" id="singlePlayerRadio" name="mode" value="single">
-      <label>Single</label><br>
-      <input type="radio" id="multiplayerRadio" name="mode" value="multiplayer">
-      <label>Multiplayer
-      </label><br>
-    </div>
+<h1 class="title">Welcome to the Game</h1>
+<form id="settingGameForm">
+<p class="chooseMode">Choose mode:</p>
+    
+    <label class="labelFontsize" for="playerOneName">Player 1</label>
+    <input class="inputStyle" type="text" name="playerOneName" required>
+    <label class="labelFontsize" for="playerTwoName">Player 2</label>
+    <input class="inputStyle" type="text" name="playerTwoName" required>
 
-    <label for="playerOneName">Player 1</label>
-    <input type="text" name="playerOneName" required>
-    <label for="playerTwoName">Player 2</label>
-    <input type="text" name="playerTwoName" required>
+    <label class="labelFontsize" for="nDimension">Columns count:</label>
+    <input class="inputStyle" type="number" name="nDimension" min="4" max="20" required>
+    <label class="labelFontsize" for="mDimension">Rows count:</label>
+    <input class="inputStyle" type="number" name="mDimension" min="4" max="20" required>
 
-    <label for="nDimension">Columns count:</label>
-    <input type="number" name="nDimension" min="4" max="20" required>
-    <label for="mDimension">Rows count:</label>
-    <input type="number" name="mDimension" min="4" max="20" required>
-
-    <input type="submit" class="gameButton">
+    <input type="submit" class="gameButton" value="Play">
   </form>
+  </section>
 `;
 
 
@@ -50,17 +43,9 @@ export async function showSettingGameView(ctx) {
         formObject['playerTurn']="playerOne";
         
         localStorage.setItem('gameData', JSON.stringify(formObject));
-
+        page.redirect('/multiplayer');
         //validation
-        let singlePlayer = document.getElementById('singlePlayerRadio').checked;
-        let multiplayer = document.getElementById('multiplayerRadio').checked;
 
-        if (singlePlayer) {
-            page.redirect('/singlePlayer');
-        }
-        else if(multiplayer) {
-            page.redirect('/multiplayer');
-        }
     }
 }
 
