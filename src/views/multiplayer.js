@@ -54,7 +54,11 @@ export async function showMultiPlayerGame(ctx) {
 }
 
 function move(gameData, e) {
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
     //find the player who is on turn
     let playerOnTurn = gameData.playerTurn;
 
@@ -68,6 +72,7 @@ function move(gameData, e) {
     }
 
     //find possible moves
+<<<<<<< Updated upstream
     //if it is from the available fields make the move
     //get the td which the user clicked
 
@@ -122,10 +127,29 @@ function move(gameData, e) {
 
         page.redirect('/winner');
     }
+=======
+    //click only on them 
+>>>>>>> Stashed changes
 
     let td = document.getElementById(`${currentPlayerCoordinates[0]}${currentPlayerCoordinates[1]}`);
     td.classList.add("tdClickPlayerOne");
 
+<<<<<<< Updated upstream
+=======
+
+    //find nearby and add them class if he cli
+
+    currentPlayerCoordinates
+
+
+
+    console.log(playerOnTurn);
+
+
+
+
+
+>>>>>>> Stashed changes
     //changing the turn to the other player
     if (gameData.playerTurn == "playerOne") {
         gameData.playerTurn = "playerTwo";
