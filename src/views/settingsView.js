@@ -10,15 +10,6 @@ let settingsView = () => html`
 
     <h2>Volume</h2>
     <input type="range" id="volumeSlider" min="0" max="100" step="1" value="50">
-
-    <h2>Theme</h2>
-    <form class="themeForm">
-        <input type="radio" id="light" name="theme" value="Light">
-        <label for="html">Light</label>
-        <br>
-        <input type="radio" id="dark" name="theme" value="Dark" checked>
-        <label for="css">Dark</label>
-        <br>
     </form>
 </div>
 `;
@@ -45,38 +36,7 @@ export async function showSettings(ctx) {
         let sliderValue = volumeSlider.value;
         ctx.audio.volume = sliderValue / 100;
     }
-
-    let theme = sessionStorage.getItem('theme');
-
-    let lightThemeSelector = document.getElementById("light");
-    lightThemeSelector.addEventListener('change', themeSelection);
-    let darkThemeSelector = document.getElementById("dark");
-    darkThemeSelector.addEventListener('change', themeSelection)
-
-
-
-    if (theme == 'light') {
-        lightThemeSelector.checked = true;
-    }
-    else {
-        darkThemeSelector.checked = true;
-    }
-
-
-    let bodyElement= document.getElementById("body");
-
-    function themeSelection() {
-
-        if (lightThemeSelector.checked) {
-            bodyElement.classList.add('background-color', "light");
-            
-        }
-        else {
-            bodyElement.classList.add('background-color', "light");
-        }
-
-
-    }
+   
 }
 
 

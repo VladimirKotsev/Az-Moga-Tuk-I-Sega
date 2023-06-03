@@ -22,6 +22,19 @@ td{
     background-color: #92d050
 }
 
+.circle{
+    background-color:blue;
+    display:block;
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    border:5px solid #000;
+    margin:auto;
+    color:#fff;
+    line-height:50px;
+    text-align:center
+  }
+
 .gameSection{
     text-align: center;
 }

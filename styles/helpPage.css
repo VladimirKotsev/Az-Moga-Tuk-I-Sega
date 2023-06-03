@@ -21,3 +21,22 @@
     border-color: #7716c0;
     border-radius: 10;
 }
+.instructions{
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 30px;
+}
+.image-container {
+    display: flex;
+    align-items: center; 
+    margin-bottom:0 ;
+ 
+  }
+  
+  .image-container img {
+    margin-right: 30px;
+    margin-left: 50px; 
+    border-radius: 10px;
+  }

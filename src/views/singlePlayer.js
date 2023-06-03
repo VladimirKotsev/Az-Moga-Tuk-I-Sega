@@ -9,7 +9,7 @@ export async function showSinglePlayerGame(ctx) {
 
     console.log(ctx.gameData);
 
-    let data=ctx.gameData;
+    let data = ctx.gameData;
     
     await ctx.render(singlePlayerView(data));
 

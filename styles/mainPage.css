@@ -7,6 +7,10 @@ body {
     background-color: white;
 }
 
+.dark{
+    background-color:  rgb(28, 28, 28);
+}
+
 .title {
     text-align: center;
     color: white;

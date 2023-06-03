@@ -6,7 +6,7 @@ const settingGameView = () => html`
 
 <div class="main-container">
   <p class="chooseMode">Chose mode:</p>
-  <form id="settingGameForm" required>
+  <form id="settingGameForm">
     <div class="radioButtons">
       <input type="radio" id="singlePlayerRadio" name="mode" value="single">
       <label>Single</label><br>

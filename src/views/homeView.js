@@ -42,7 +42,7 @@ const homeView = (theme) => html`
     </a>
 
     <div class="group" id="social">
-    <a href="https://www.instagram.com/mathtricks03062023">
+    <a href="https://www.instagram.com/mathtricks03062023/">
         <div class="socials" id="instagram">
             <img src="/resources//instagram.png" alt="" width="20" height="20">
         </div>
@@ -62,9 +62,7 @@ const homeView = (theme) => html`
 </section>`;
 
 export async function showHome(ctx) {
-
-
-    let theme= sessionStorage.getItem("theme");
+    let theme = sessionStorage.getItem("theme");
     ctx.render(homeView(theme));
 }
 
