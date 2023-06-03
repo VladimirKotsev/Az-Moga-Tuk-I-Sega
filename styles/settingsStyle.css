@@ -40,3 +40,12 @@ input[type="range"]::-webkit-slider-thumb {
 #toggleDiv {
   display: none;
 }
+
+h2{
+  color: white;
+}
+
+.themeForm{
+  align-items: center;
+  justify-content: center;
+}

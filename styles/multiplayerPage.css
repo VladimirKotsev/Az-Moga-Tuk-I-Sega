@@ -1,0 +1,27 @@
+.matrixContainer{
+    display: grid;
+    place-items: center;
+    grid-gap:0;
+}
+td{
+    border: 1px solid black;
+    color: black ;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+}
+.tdClickPlayerOne{
+    color: black ;
+    background-color: #00b0f0
+}
+
+.tdClickPlayerTwo{
+    color: black ;
+    background-color: #92d050
+}
+
+.gameSection{
+    text-align: center;
+}

@@ -1,8 +1,8 @@
 import { html } from '../library.js'
 
-const homeView = () => html`
+const homeView = (theme) => html`
 <section>
-    <p class="title">Queens</p>
+    <p class="title">MathTricks</p>
     <div class="buttons">
     <a href="/settingGameView">
         <button class="gameButton" id="game">
@@ -42,7 +42,7 @@ const homeView = () => html`
     </a>
 
     <div class="group" id="social">
-    <a href="#">
+    <a href="https://www.instagram.com/mathtricks03062023">
         <div class="socials" id="instagram">
             <img src="/resources//instagram.png" alt="" width="20" height="20">
         </div>
@@ -62,6 +62,9 @@ const homeView = () => html`
 </section>`;
 
 export async function showHome(ctx) {
-    ctx.render(homeView());
+
+
+    let theme= sessionStorage.getItem("theme");
+    ctx.render(homeView(theme));
 }
 

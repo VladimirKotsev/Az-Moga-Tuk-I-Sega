@@ -7,6 +7,17 @@
 
 .helpPageReturnButton{
     position: fixed;
-    top: 0px; 
-    left: 10px; 
+    bottom: 30px; 
+    left: 20px; 
+}
+.helpContainer{
+    display: flex;
+    flex-direction: row;
+}
+.gameDescriptionTextContainer{
+    height: 200px;
+    width: 350px;
+    border: 5px;
+    border-color: #7716c0;
+    border-radius: 10;
 }

@@ -1,68 +1,83 @@
 import { html } from '../library.js';
 
-let settingsView = () => html`<div class="container">
-<h1 class="title">Settings</h1>
+let settingsView = () => html`
+<div class="container">
+    <h1 class="title">Settings</h1>
+    <h2>Background Music</h2>
+    <label>
+        <input type="checkbox" id="musicCheckbox">Mute background music
+    </label>
 
-<h2>Background Music</h2>
-<label>
-  <input type="checkbox" id="musicCheckbox"> Mute background music
-  </label>
+    <h2>Volume</h2>
+    <input type="range" id="volumeSlider" min="0" max="100" step="1" value="50">
 
-<h2>Volume</h2>
-<input type="range" id="volumeSlider" min="0" max="100" step="1" value="50">
-
-<h2>Theme</h2>
-<form>
-  <input type="radio" id="light" name="theme" value="Light">
-  <label for="html">Light </label><br>
-  <input type="radio" id="dark" name="theme" value="Dark">
-  <label for="css">Dark</label><br>
-</form>
+    <h2>Theme</h2>
+    <form class="themeForm">
+        <input type="radio" id="light" name="theme" value="Light">
+        <label for="html">Light</label>
+        <br>
+        <input type="radio" id="dark" name="theme" value="Dark" checked>
+        <label for="css">Dark</label>
+        <br>
+    </form>
 </div>
 `;
-
-
 
 export async function showSettings(ctx) {
     ctx.render(settingsView(muteMusic));
 
-
     let musicCheckbox = document.getElementById("musicCheckbox");
     musicCheckbox.addEventListener('change', muteMusic);
-
 
     let volumeSlider = document.getElementById("volumeSlider");
     volumeSlider.addEventListener("input", volumeChange);
 
     function muteMusic() {
-
         if (musicCheckbox.checked == true) {
             ctx.audio.pause();
         }
         else {
             ctx.audio.play();
         }
-
     }
 
     function volumeChange() {
         let sliderValue = volumeSlider.value;
-        ctx.audio.volume=sliderValue/100;
+        ctx.audio.volume = sliderValue / 100;
     }
-}
 
-function themeSelection(ctx) {
+    let theme = sessionStorage.getItem('theme');
 
-    if (ctx.backgroundColor == 'blackTheme') {
+    let lightThemeSelector = document.getElementById("light");
+    lightThemeSelector.addEventListener('change', themeSelection);
+    let darkThemeSelector = document.getElementById("dark");
+    darkThemeSelector.addEventListener('change', themeSelection)
 
-        ctx.backgroundColor = 'whiteTheme';
+
+
+    if (theme == 'light') {
+        lightThemeSelector.checked = true;
     }
     else {
-
-        ctx.backgroundColor = 'blackTheme';
+        darkThemeSelector.checked = true;
     }
 
 
+    let bodyElement= document.getElementById("body");
+
+    function themeSelection() {
+
+        if (lightThemeSelector.checked) {
+            bodyElement.classList.add('background-color', "light");
+            
+        }
+        else {
+            bodyElement.classList.add('background-color', "light");
+        }
+
+
+    }
 }
+
 
 

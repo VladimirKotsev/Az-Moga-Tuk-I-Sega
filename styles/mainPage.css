@@ -3,6 +3,10 @@ body {
     overflow: hidden;
 }
 
+.light{
+    background-color: white;
+}
+
 .title {
     text-align: center;
     color: white;
@@ -44,8 +48,6 @@ a:hover {
     color: #7716c0;
 }
 
-
-
 .helpPageReturnButton {
     margin-top: 100px;
 }
@@ -74,7 +76,7 @@ a:hover {
     cursor: pointer;
     font-weight: bold;
     margin-top: 17px;
-   }
+}
    
    .gameButton:hover {
     box-shadow: 0 0 5px #ae00ff, 0 0 5px #001eff, 0 0 25px #ae00ff;
@@ -153,4 +155,9 @@ a:hover {
     display: flex;
     flex-direction: row;
     gap: 10px
+  }
+
+  .lightThemeBody{
+    background-color: rgb(249, 245, 230);
+    overflow: hidden;
   }
