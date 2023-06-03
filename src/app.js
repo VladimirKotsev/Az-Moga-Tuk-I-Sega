@@ -1,6 +1,6 @@
 import { page, render } from './library.js';
 import { showHelp } from './views/helpView.js';
-import { showGame } from './views/gameView.js';
+import { showGame } from './views/settingGameView.js';
 import { showHome } from './views/homeView.js';
 import { showScores } from './views/scoresView.js';
 import { showSettings } from './views/settingsView.js';
@@ -9,13 +9,13 @@ import { showSettings } from './views/settingsView.js';
 page(contextDecorator)
 page('/', showHome);
 page('/help', showHelp);
-page('/game', showGame);
+page('/settingGameView', showGame);
 page('/scores', showScores);
 page('/settings', showSettings);
 
 let mainElement= document.getElementById("mainPage");
 let audioElement= document.getElementById("myAudio");
-audioElement.play();
+//audioElement.play();
 
 
 

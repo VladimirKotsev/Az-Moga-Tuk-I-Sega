@@ -4,7 +4,7 @@ const homeView = () => html`
 <section>
     <p class="title">Queens</p>
     <div class="buttons">
-    <a href="/game">
+    <a href="/settingGameView">
         <button class="gameButton" id="game">
             <span></span>
             <span></span>

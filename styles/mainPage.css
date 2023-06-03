@@ -14,6 +14,13 @@ body {
     color:#7716c0;
 }
 
+.secondaryText{
+    text-align: center;
+    color: white;
+    font-size: 2vw;
+    text-shadow: 0 0 40px #7716c0, 0 0 20px #7716c0;
+}
+
 .buttons {
     text-align: center;
     align-items: center;
