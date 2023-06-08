@@ -23,7 +23,7 @@ const settingGameView = () => html`
 `;
 
 
-export async function showSettingGameView(ctx) {
+export async function showSettingGame(ctx) {
     ctx.render(settingGameView());
 
     let settingGameForm = document.getElementById("settingGameForm");

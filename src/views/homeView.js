@@ -4,7 +4,7 @@ const homeView = (theme) => html`
 <section>
     <p class="title">MathTricks</p>
     <div class="buttons">
-    <a href="/settingGameView">
+    <a href="/chooseMode">
         <button class="gameButton" id="game">
             <span></span>
             <span></span>

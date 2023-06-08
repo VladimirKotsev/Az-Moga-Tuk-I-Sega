@@ -2,6 +2,8 @@
     display: grid;
     place-items: center;
     grid-gap:0;
+    cursor: pointer;
+    user-select: none;
 }
 td{
     border: 1px solid black;
@@ -12,6 +14,10 @@ td{
     height: 40px;
     width: 40px;
     font-size: 30px;
+    transition: background 0.4s ease-in-out;
+}
+td:hover{
+    background: rgb(171, 170, 170);
 }
 .tdClickPlayerOne{
     color: black ;
